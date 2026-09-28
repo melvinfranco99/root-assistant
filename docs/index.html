@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Root Assistant</title>
+<style>
+  :root{
+    --bg:#0f1b2d; --bg2:#13233a; --card:#182f4d; --text:#eaf1fb; --muted:#9db3d1;
+    --accent:#4caf50; --accent2:#3fa7ff; --line:#26466f; --warn:#ffb74d;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f4f7fc; --bg2:#eaf0f9; --card:#ffffff; --text:#132033; --muted:#5a6b83;
+           --line:#dbe4f0; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+       background:linear-gradient(160deg,var(--bg),var(--bg2));color:var(--text);
+       min-height:100vh;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 60px}
+  header{text-align:center;margin-bottom:34px}
+  .logo{width:84px;height:84px;border-radius:22px;background:var(--card);
+        border:1px solid var(--line);display:grid;place-items:center;margin:0 auto 16px}
+  .logo svg{width:52px;height:52px}
+  h1{font-size:34px;margin:0 0 6px}
+  .sub{color:var(--muted);font-size:16px;margin:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;
+        padding:24px;margin:18px 0}
+  .dl{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+  a.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);
+        color:#fff;text-decoration:none;font-weight:700;font-size:18px;
+        padding:16px 30px;border-radius:14px;transition:transform .12s ease,opacity .12s}
+  a.btn:hover{transform:translateY(-2px);opacity:.94}
+  .hint{color:var(--muted);font-size:13px}
+  h2{font-size:19px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  ol,ul{margin:0;padding-left:20px}
+  li{margin:8px 0}
+  code{background:rgba(127,127,127,.16);padding:2px 7px;border-radius:6px;
+       font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+  .warn{border-left:4px solid var(--warn);background:rgba(255,183,77,.10)}
+  .warn h2{color:var(--warn)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .feat{background:rgba(63,167,255,.08);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .feat b{color:var(--accent2)}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+  a{color:var(--accent2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+        <path fill="var(--accent)" d="M54,20 L82,32 L82,58 C82,74 70,86 54,90 C38,86 26,74 26,58 L26,32 Z"/>
+        <path fill="#fff" d="M46,58 l6,6 l14,-14 l4.5,4.5 l-18.5,18.5 l-10.5,-10.5 z"/>
+      </svg>
+    </div>
+    <h1>Root Assistant</h1>
+    <p class="sub">Analiza tu Android y te da el procedimiento de rooteo exacto para tu modelo.</p>
+  </header>
+
+  <div class="card dl">
+    <a class="btn" href="./RootAssistant.apk" download>⬇ Descargar APK</a>
+    <span class="hint">Android 8.0 o superior · APK de depuración firmado · ~2 MB</span>
+  </div>
+
+  <div class="card">
+    <h2>📲 Cómo instalar</h2>
+    <ol>
+      <li>Descarga el APK en tu móvil con el botón de arriba.</li>
+      <li>Ábrelo. Android te pedirá permitir <b>«Instalar apps de fuentes desconocidas»</b> para tu navegador: acéptalo.</li>
+      <li>Pulsa <b>Instalar</b> y abre <b>Root Assistant</b>.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>⚙️ Qué hace la app</h2>
+    <div class="grid">
+      <div class="feat"><b>Analizar sistema</b><br>Detecta fabricante, modelo, chipset, versión de Android, estado del bootloader y si ya tienes root.</div>
+      <div class="feat"><b>Rootear</b><br>Muestra el aviso «¿Estás seguro?» y, al confirmar, genera los pasos de rooteo adaptados a tu marca concreta.</div>
+    </div>
+  </div>
+
+  <div class="card warn">
+    <h2>⚠️ Importante — léelo antes</h2>
+    <p>No existe un botón mágico que rootee cualquier móvil solo: el rooteo real necesita
+    <b>desbloquear el bootloader</b> (con PC, y borra los datos) y <b>parchear el boot.img</b> de tu firmware.
+    Esta app te <b>guía con los pasos exactos de tu modelo</b>; no ejecuta exploits ni modifica el sistema por ti.</p>
+    <ul>
+      <li>Rootear puede <b>anular la garantía</b> y <b>borrar todos tus datos</b>.</li>
+      <li>Puede impedir apps de <b>banca, pagos y DRM</b>, y bloquear las <b>OTA</b>.</li>
+      <li>Úsalo <b>solo en dispositivos de tu propiedad</b>. Lo haces bajo tu responsabilidad.</li>
+      <li>Algunos móviles (varios Samsung, la mayoría de Huawei/Honor) <b>no permiten</b> desbloquear el bootloader.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Código abierto · Compilado automáticamente con GitHub Actions.<br>
+    Herramientas de referencia: <a href="https://github.com/topjohnwu/Magisk">Magisk</a>.
+  </footer>
+</div>
+</body>
+</html>
